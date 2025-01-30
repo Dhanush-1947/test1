@@ -1,51 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a  style="font-weight: bold"; navbar-brand" href="#">TupperWare</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
-          </div>
+    <div class="chat-container">
+        <div class="chat-header">
+            Hi, I'm DeepSeek.
         </div>
-      </nav>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="data:image/jpeg;base64,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" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKS6STOuOP2PcstU5lwzWMrmJt4qV2TF2xkw&s" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Third slide">
-          </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">How can I help you today?</div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
